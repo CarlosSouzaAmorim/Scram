@@ -1,0 +1,28 @@
+Scram.txt
+
+
+
+
+
+
+
+Acronimo em inglês para Super-Critical Reactor Axe Man, em tradução livre: Homem-Machado do Reator Supercrítico.
+Putting the Axe to the ‘Scram’ Myth
+
+https://www.nrc.gov/docs/ml2015/ml20154k751.pdf
+Nuclear Regulatory Commission (.gov)
+https://www.nrc.gov › docs
+
+No jargão de reatores nucleares, SCRAM é o termo para um desligamento de emergência. É um procedimento crítico que insere rapidamente todas as barras de controle no núcleo do reator para interromper a reação em cadeia de fissão nuclear o mais rápido possível.
+
+lenda sobre a origem do termo. A história remonta ao primeiro reator nuclear do mundo, o Chicago Pile-1, construído sob a liderança de Enrico Fermi em 1942.
+
+    A Situação: Como era o primeiro reator, havia muitas incertezas sobre a segurança e o controle da reação em cadeia.
+
+    A Medida de Segurança: Além dos sistemas de controle primários, foram implementadas várias medidas de segurança redundantes. Uma delas era uma única barra de controle de emergência suspensa por uma corda sobre o reator.
+
+    O "Axe Man": Um físico chamado Norman Hilberry recebeu uma tarefa crucial: ele deveria ficar ao lado do reator durante todo o experimento com um machado na mão. Se todos os outros sistemas de segurança falhassem e a reação começasse a sair de controle, sua ordem era cortar a corda, fazendo com que a barra de controle caísse pela força da gravidade dentro do reator e parasse a reação.
+
+Este homem ficou conhecido na história como o "Safety Control Rod Axe Man" (Homem do Machado da Barra de Controle de Segurança).
+
+
