@@ -3,6 +3,8 @@
 #include <unistd.h> // Para usleep()
 #include <stdlib.h> // Para system()
 
+//cscram_top_5.c
+
 // Estados da FSM
 typedef enum {
     STATE_NORMAL,
