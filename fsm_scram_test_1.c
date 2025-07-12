@@ -4,8 +4,15 @@
 #include <unistd.h> // Para a função sleep() em sistemas UNIX-like (Linux, macOS)
 #include <time.h>   // Para inicializar o gerador de números aleatórios
 
-// Para compilação em Windows, descomente a linha abaixo
+//scram_test_3.c
+// Este é um simulador de controle de bombas de reator PWR (Pressurized Water Reactor)
+// Implementa uma Máquina de Estados Finitos (FSM) para gerenciar o estado do sistema
+// e simular o comportamento das bombas e parâmetros do reator.
+
+// no windows
 // #include <windows.h>
+
+//no linux da pra usar os acentos nas palavras
 
 // Definindo os estados possíveis da nossa FSM
 typedef enum {
@@ -85,7 +92,7 @@ int main() {
         while (getchar() != '\n');
 
         printf("\n----------------------------------------------------\n");
-        // Em um sistema Windows, use Sleep(2000);
+        // Em um sistema windows, use Sleep(2000);
         sleep(2);
     }
 
@@ -96,7 +103,7 @@ int main() {
 // --- Implementação das Funções ---
 
 /**
- * @brief Inicializa o sistema de controle para o estado inicial.
+ Inicializa o sistema de controle para o estado inicial.
  */
 void inicializarSistema(SistemaControlePWR *sistema) {
     sistema->estado_atual = DESLIGADO;
@@ -105,7 +112,7 @@ void inicializarSistema(SistemaControlePWR *sistema) {
 }
 
 /**
- * @brief Retorna o nome do estado como uma string para impressão.
+ Retorna o nome do estado como uma string para impressão
  */
 const char* getNomeEstado(EstadoBomba estado) {
     switch (estado) {
@@ -120,7 +127,7 @@ const char* getNomeEstado(EstadoBomba estado) {
 }
 
 /**
- * @brief Imprime o status atual do sistema no console.
+Imprime o status atual do sistema no console.
  */
 void imprimirStatus(const SistemaControlePWR *sistema) {
     printf("Estado Atual: [%s]\n", getNomeEstado(sistema->estado_atual));
@@ -129,11 +136,13 @@ void imprimirStatus(const SistemaControlePWR *sistema) {
 }
 
 /**
- * @brief Simula a flutuação dos parâmetros do reator.
- * Há uma pequena chance de gerar um valor fora da faixa normal para testar o SCRAM.
- */
+Simula a flutuação dos parâmetros do reator.
+Há uma pequena chance de gerar um valor fora da faixa normal para testar o SCRAM.
+*/
 void simularParametros(SistemaControlePWR *sistema) {
     if (sistema->estado_atual == OPERANDO) {
+
+
         // Flutuação normal
         sistema->pressao_primario = 155.0 + ((rand() % 100 - 50) / 50.0) * 2.0; // Variação normal de +/- 2 bar
         sistema->temperatura_refrigerante = 310.0 + ((rand() % 100 - 50) / 50.0) * 5.0; // Variação normal de +/- 5 °C
@@ -151,8 +160,8 @@ void simularParametros(SistemaControlePWR *sistema) {
 }
 
 /**
- * @brief O coração do programa: a Máquina de Estados Finitos.
- * Processa o estado atual com base nos comandos e parâmetros.
+O coração do programa: a Máquina de Estados Finitos.
+Processa o estado atual com base nos comandos e parâmetros.
  */
 void maquinaDeEstados(SistemaControlePWR *sistema, ComandoOperador comando) {
     switch (sistema->estado_atual) {
