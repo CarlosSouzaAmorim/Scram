@@ -97,7 +97,9 @@ int main() {
     }
 
     printf("Simulação encerrada.\n");
-    return 0;
+
+    printf("\n\n");
+    return -23;
 }
 
 // --- Implementação das Funções ---
