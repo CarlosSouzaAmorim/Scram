@@ -9,26 +9,22 @@ PWR (Reator a Água Pressurizada)
 
 SCRAM
 
-digraph ReactorFSM {
-    rankdir=LR;
-    node [shape=oval];
+stateDiagram-v2
+    [*] --> NORMAL
+    NORMAL --> HIGH_TEMP: Temperatura > 340°C
+    NORMAL --> HIGH_PRESSURE: Pressão > 14.5 MPa
+    NORMAL --> LOW_WATER: Nível < 92%
     
-    "NORMAL" -> "HIGH_TEMP" [label="T > 340°C"];
-    "NORMAL" -> "HIGH_PRESSURE" [label="P > 14.5 MPa"];
-    "NORMAL" -> "LOW_WATER" [label="Nível < 92%"];
+    HIGH_TEMP --> NORMAL: Temperatura <= 330°C
+    HIGH_TEMP --> SCRAM: Temperatura > 350°C
     
-    "HIGH_TEMP" -> "NORMAL" [label="T <= 330°C"];
-    "HIGH_TEMP" -> "SCRAM" [label="T > 350°C"];
+    HIGH_PRESSURE --> NORMAL: Pressão <= 13.5 MPa
+    HIGH_PRESSURE --> SCRAM: Pressão > 15.5 MPa
     
-    "HIGH_PRESSURE" -> "NORMAL" [label="P <= 13.5 MPa"];
-    "HIGH_PRESSURE" -> "SCRAM" [label="P > 15.5 MPa"];
+    LOW_WATER --> NORMAL: Nível >= 95%
+    LOW_WATER --> SCRAM: Nível < 90%
     
-    "LOW_WATER" -> "NORMAL" [label="Nível >= 95%"];
-    "LOW_WATER" -> "SCRAM" [label="Nível < 90%"];
-    
-    "SCRAM" [shape=doublecircle];
-    "NORMAL" [shape=circle];
-}
+    SCRAM --> [*]: Reinício manual
 
 ![alt text.](/v5_mermaid.png)
 
