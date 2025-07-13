@@ -9,4 +9,5 @@ PWR (Reator a Água Pressurizada)
 
 SCRAM
 
+![alt text.](/v5_mermaid.png)
 
